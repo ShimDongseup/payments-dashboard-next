@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AllPays PG Dashboard (Frontend Assignment)
 
-## Getting Started
+올페이즈 프론트엔드 채용 과제를 위한 **PG 대시보드 웹 애플리케이션**입니다.  
+제공된 채용 전용 API를 사용하여 결제/가맹점 관련 데이터를 조회하고, 대시보드 형태로 시각화합니다.
 
-First, run the development server:
+---
+
+## Tech Stack
+
+- **Framework**: Next.js (App Router, React 18)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Data Fetching**: Native `fetch` API (서버 컴포넌트에서 직접 호출)
+- **Build Tool**: Next.js 내장 빌드 시스템
+- **Package Manager**: npm
+
+---
+
+## 실행 방법
+
+프로젝트 클론 후 아래 명령어를 실행하면 됩니다.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 환경 변수
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+API Base URL은 .env 파일을 통해 설정할 수 있습니다.
+프로젝트 루트에 .env 파일을 생성하고 아래 내용을 추가합니다:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_API_BASE_URL=https://recruit.paysbypays.com/api/v1
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 폴더 구조 요약
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+  layout.tsx            # 공통 레이아웃 (사이드바 + 헤더)
+  page.tsx              # 루트(/) → /dashboard 리다이렉트
+  dashboard/
+    page.tsx            # 대시보드 화면
+  transactions/
+    page.tsx            # 거래 내역 리스트 + 페이지네이션
+  merchants/
+    page.tsx            # 가맹점 목록 + 페이지네이션
+    [mchtCode]/
+      page.tsx          # 가맹점 상세 페이지 (동적 라우트)
+public/
+  ...                   # 정적 자산
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
