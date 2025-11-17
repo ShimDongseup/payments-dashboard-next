@@ -51,6 +51,6 @@ app/
     [mchtCode]/
       page.tsx          # 가맹점 상세 페이지 (동적 라우트)
 public/
-  ...                   # 정적 자산
+  ...
 
 ```
