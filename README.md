@@ -1,6 +1,6 @@
-# AllPays PG Dashboard (Frontend Assignment)
+# payments Dashboard (Frontend Assignment)
 
-올페이즈 프론트엔드 채용 과제를 위한 **PG 대시보드 웹 애플리케이션**입니다.  
+**payments 대시보드 웹 애플리케이션**입니다.  
 제공된 채용 전용 API를 사용하여 결제/가맹점 관련 데이터를 조회하고, 대시보드 형태로 시각화합니다.
 
 ---
